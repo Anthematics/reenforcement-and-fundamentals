@@ -11,8 +11,9 @@
 # Let's take a different approach to film recommendations: create the same variables containing your potential film recommendations
 # and then ask the user to rate their appreciation for 1. documentaries 2. dramas 3. comedies on a scale from one to five.
 # If they rate documentaries four or higher, recommend the documentary. If they rate documentaries 3 or lower but both comedies and dramas 4 or higher,
- # recommend the dramedy. If they rate only dramas 4 or higher, recommend the drama. If they rate just comedies 4 or higher, recommend the comedy. Otherwise,
-	# recommend a good book.
+# recommend the dramedy. If they rate only dramas 4 or higher, recommend the drama. If they rate just comedies 4 or higher, recommend the comedy. Otherwise,
+# recommend a good book.
+
 
 
 drama= 'better call saul'
@@ -26,25 +27,29 @@ documentary='march of the penguins'
 
 	user_name = gets.chomp
 
-	puts "hello #{user_name} do you like documentaries?"
-	 documentary_answer = gets.chomp
+	puts "hello #{user_name} on a scale of 1-5 how much do you like documentaries?"
+	 documentary_answer = gets.chomp.to_i
 
-	puts"by the way #{user_name} do you like drama?"
-		drama_answer=gets.chomp
+	puts"by the way #{user_name} on a scale of 1-5 how do you feel about dramas?"
+		drama_answer=gets.chomp.to_i
 
-	puts "last but not least#{user_name} do you like comedies?"
-		comedy_answer=gets.chomp
+	puts "last but not least#{user_name} on a scale of 1-5  do you like comedies?"
+		comedy_answer=gets.chomp.to_i
 
-	if documentary_answer  == "yes"
-		puts "I recommend #{documentary}"
+		 if documentary_answer  >= 4 && drama_answer <5 && comedy_answer <5
+				 puts "I recommend #{documentary}"
 
-	elsif documentary_answer ==  "no" && drama_answer =="no" && comedy_answer =="yes"
-		puts "I recommend #{comedy}"
+			elsif documentary_answer <= 3 && drama_answer <= 3 && comedy_answer >= 4
+					puts "I recommend #{comedy}"
 
-	elsif documentary_answer== "no" && drama_answer && comedy_answer= "yes"
-		puts "I recommend #{dramady}"
+			elsif documentary_answer <= 3 && drama_answer && comedy_answer >= 4
+					puts "I recommend #{dramady}"
 
-	else
-		puts "read a book"
+			elsif documentary_answer <= 4 && drama_answer >= 4 &&comedy_answer <= 4
+					puts "I recommend #{drama}"
 
-	end
+			elsif documentary_answer == 5 && drama_answer ==5 && comedy_answer ==5
+					puts "you must love film check out #{drama} as well as #{dramady} #{comedy} & #{documentary} I just blue myself"
+			else
+					puts "read a book"
+			end
