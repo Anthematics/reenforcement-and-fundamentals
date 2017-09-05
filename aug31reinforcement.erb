@@ -1,0 +1,39 @@
+<label for="email">email</label>
+<input type="text" name="email" id="email" class="fancy_form" >
+
+<%form_for new_user do %>
+<%=f.label:email%>
+<%=f.text_field:email%>
+
+<label for="username">username</label>
+<input type="text" name="username" id="username" class="fancy_form" >
+
+<%= f.label:username%>
+<%=f.text_field:username%>
+
+
+<label for="pin">pin</label>
+<input type="text" name="pin" id="pin" class="fancy_form">
+
+<%=f.label:pin %>
+<%=f.integer:pin %>
+<!-- we are entering an interger here hence f.interger -->
+
+<label for="website">website</label>
+<input type="text" name="website" id="website" class="fancy_form" >
+
+<%=f.label:website %>
+<%= f.text_field: website%>
+
+
+<label for="address">address</label>
+<input type="text" name="address" id="address" class="fancy_form" >
+
+<%=f.label:address %>
+<%=f.text_field:address %>
+
+<label for="alias">alias</label>
+<input type="text" name="alias" id="alias" class="fancy_form" >
+
+<%=f.label:alias %>
+<%=f.text_field:alias %>
