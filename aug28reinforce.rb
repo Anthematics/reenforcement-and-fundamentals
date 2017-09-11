@@ -26,9 +26,9 @@ class Cohort
 
 		if potential_holidays.any?
 			potential_holidays.each do |h|
-				print"Are you taking #{h}off? y/N"
+				print "Are you taking #{h}off? y/N"
 				answer = gets.chomp
-				if answer.downcase== "y"
+				if answer.downcase == "y"
 					return true
 				end
 			end
@@ -89,4 +89,4 @@ team_edi = Cohort.new(Date.new(2017,07,31))
 p team_edi.coffee_code_days
 p team_edi.weeks_of_cohort
 p team_edi.class_days
-p team_edi.no_lecture_on(50)
+p team_edi.no_lecture_on(Date.today)

@@ -8,11 +8,14 @@ class Location
 class Trip
 	@@stops = []
 
-
- def newlocation(name)
+	def newlocation(name)
 	 @@stops << Location.new(name)
- end
+	end
 
- def show_trips
+	def show_trips
 	 return @@stops
+	end
+
+	
+
 end
